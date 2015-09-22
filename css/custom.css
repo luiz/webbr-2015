@@ -1,0 +1,45 @@
+.reveal h1,
+.reveal h2 {
+	font-family: 'Oswald', sans-serif;
+}
+.reveal .title p {
+	font-size: 80%;
+}
+.reveal .slides {
+	text-align: left;
+}
+.reveal section img {
+	border: none;
+}
+.reveal .slides-poa {
+	text-align: center;
+}
+.navegadores,
+.reveal .demo,
+.reveal .frase-sozinha {
+	text-align: center;
+}
+.reveal .navegadores img {
+	margin: 30px;
+	box-shadow: none;
+}
+.reveal .dispositivos h3,
+.reveal .workarounds h3,
+.reveal .situacoes h3,
+.reveal .frustracao h3,
+.reveal .site-com-js h2 {
+	color: white;
+	text-align: right;
+}
+.reveal .site-sem-js h2 {
+	color: black;
+	text-align: right;
+}
+.reveal .pessoas h3 {
+	color: white;
+	padding-top: 100px;
+}
+.reveal .nao-deu-certo,
+.reveal .beco-sem-saida {
+	text-align: center;
+}

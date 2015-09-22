@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Construindo uma experiência agradável na Web desde o começo com progressive enhancement</title>
+
+		<meta name="description" content="Apresentação sobre progressive enhancement feita na conferência web.br 2015">
+		<meta name="author" content="Luiz Fernando Oliveira Corte Real">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="title">
+					<p>Construindo uma experiência agradável na Web desde o começo com</p>
+					<h1>progressive enhancement</h1>
+					<p>Luiz Corte Real</p>
+				</section>
+
+				<section>
+					<section>
+						<img style="float:right" src="img/gravatar.jpg" alt="Minha foto">
+						<h2>Sobre mim</h2>
+						<p>Desenvolvedor na TecSinapse</p>
+						<p>Instrutor no Alura</p>
+					</section>
+
+					<section>
+						<img style="float:right" src="img/livro.png" alt="Capa do livro Coletânea Front-end">
+						<p>Um dos autores do livro</p>
+						<p class="fragment">Capítulo sobre <strong>progressive enhancement</strong></p>
+					</section>
+
+					<section class="slides-poa">
+						<img src="img/apresentacao-frontinpoa.png" alt="Slide inicial da apresentação que dei sobre Progressive Enhancement no Front in POA ano passado" width="75%">
+						<p>
+							<a href="https://youtu.be/H2sHmB28O_M?list=PLg2lQYZDBwORupm0JaQghhsI9mgWOZ1XL">Palestra ano passado</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Primeiro, um pouco de contexto</h2>
+					</section>
+					<section>
+						<h2>Diversidade</h2>
+					</section>
+					<section class="navegadores">
+						<h3>Navegadores</h3>
+						<img src="img/firefox.png" alt="Firefox">
+						<img src="img/chrome.png" alt="Chrome">
+						<img src="img/safari.png" alt="Safari">
+						<br>
+						<img src="img/opera.png" alt="Opera">
+						<img src="img/ie.png" alt="Internet Explorer">
+					</section>
+					<section class="dispositivos" data-background="img/smart-fridge.jpg">
+						<h3>Dispositivos</h3>
+					</section>
+					<section class="pessoas" data-background="img/acessibilidade-cadeirarodas.jpg">
+						<h3>Pessoas</h3>
+					</section>
+					<section class="situacoes" data-background="img/situacoes.jpg">
+						<h3>Situações</h3>
+					</section>
+					<section>
+						<h2>Como atender todos esses cenários?</h2>
+					</section>
+				</section>
+
+				<section>
+					<section class="workarounds" data-background="img/workaround.jpg">
+						<h3>Workarounds</h3>
+					</section>
+					<section class="nao-deu-certo" data-background="img/nao-deu-certo.jpg">
+						<p>(que nem sempre dão certo)</p>
+					</section>
+					<section>
+						<h2>Graceful degradation</h2>
+						<p class="fragment">A ideia é boa, mas...</p>
+					</section>
+					<section class="frustracao" data-background="img/frustracao.jpg">
+						<h3>Frustração</h3>
+					</section>
+					<section class="beco-sem-saida" data-background="#000000">
+						<h3>Becos sem saída</h3>
+					</section>
+					<section class="site-com-js" data-background-video="img/site-com-js.webm" data-background="#000000">
+						<h2>Com JS</h2>
+					</section>
+					<section class="site-sem-js" data-background="img/site-sem-js.png">
+						<h2>Sem JS</h2>
+					</section>
+					<section>
+						<p>Então...</p>
+						<h2>Comofas?</h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>Progressive enhancement</h2>
+					<p class="fragment">Começar pelo limitado<strong class="fragment"> e funcional</strong></p>
+					<strong class="fragment">Garantir acesso ao conteúdo básico</strong>
+				</section>
+
+				<section>
+					<section>
+						<h2>HTML <span class="fragment">semântico</span></h2>
+						<pre><code data-trim contenteditable>
+<article>
+	<h1>Título</h1>
+	<p>Parágrafo com
+		<a href="outra-pagina.html">link</a>
+	</p>
+</article>
+						</code></pre>
+					</section>
+					<section>
+						<h2>HTML ♥ progressive enhancement</h2>
+						<pre><code data-trim contenteditable>
+<input type="data" required>
+						</code></pre>
+						<pre><code data-trim contenteditable>
+<audio>
+	<source src="audio.mp3" type="audio/mp3">
+	<source src="audio.ogg" type="audio/ogg">
+	Conteúdo alternativo para quem não tem suporte
+</audio>
+						</code></pre>
+					</section>
+
+					<section class="demo">
+						<h1>Demo</h1>
+						<small><a href="http://alistapart.com/d/testprogressiveenhancement/demos/demo3.html">(por Scott Jehl)</a></small>
+					</section>
+					<section>
+						<h2 class="frase-sozinha">Inclusive para webapps!</h2>
+					</section>
+					<section class="demo">
+						<h1>Demo</h1>
+					</section>
+					<section>
+						<p>CSS e JavaScript devem ser vistos como recursos <strong>adicionais</strong></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Melhorando o visual</h2>
+						<p class="fragment">Começando pelo mais simples</p>
+					</section>
+					<section>
+						<h2>CSS ♥ progressive enhancement</h2>
+						<pre><code data-trim contenteditable>
+li:nth-child(odd) {
+	background: url(img.png) no-repeat center;
+	background: url(img.svg) no-repeat center/100% auto;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h1 class="frase-sozinha">Mobile first</h1>
+					</section>
+					<section>
+						<h2>Mobile first ♥<br>progressive enhancement</h2>
+						<pre><code data-trim contenteditable>
+.container {
+	width: 1000px;
+	margin: auto;
+}
+@media (max-width: 1000px) {
+	.container {
+		width: 98%;
+	}
+}
+						</code></pre>
+						<em>versus</em>
+						<pre><code data-trim contenteditable>
+.container {
+	width: 98%;
+	margin: auto;
+	max-width: 1000px;
+}
+						</code></pre>
+					</section>
+					<section class="demo">
+						<h1>Demo</h1>
+					</section>
+					<section>
+						<h2>Mobile first ♥<br>progressive enhancement²</h2>
+						<img src="img/hamburguer-icon.png" alt="Ícone do hamburguer">
+					</section>
+					<section>
+						<h2>Mobile first ♥<br>progressive enhancement²</h2>
+						<img src="img/menu-mobile.png" alt="Menu mobile bacana">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2><span class="fragment highlight-red">Melhorando</span> a interação</h2>
+						<p>Começando pelo <del>IE 6</del> mais simples</p>
+					</section>
+					<section>
+						<h2>JavaScript não obstrutivo</h2>
+						<p>Se depende de JS, faz com JS</p>
+					</section>
+					<section class="demo">
+						<h1>Demo</h1>
+					</section>
+					<section>
+						<h2>Feature detection</h2>
+						<p>Em vez de browser detection</p>
+					</section>
+					<section class="demo">
+						<h1>Demo</h1>
+					</section>
+					<section>
+						<h2>JS ♥ <span class="fragment">AJAX</span></h2>
+						<p class="fragment">AJAX 💔 offline</p>
+					</section>
+					<section>
+						<h2>Offline first ♥<br>progressive enhancement</h2>
+						<p>Mais limitado: internet móvel no metrô</p>
+					</section>
+					<section class="demo">
+						<h1>Demo</h1>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Progressive enhancement:<br>por quê?</h2>
+						<ul>
+							<li class="fragment">Mais robusto</li>
+							<li class="fragment">Maior abrangência <strong>desde o começo</strong></li>
+							<li class="fragment">Foco no conteúdo</li>
+							<li class="fragment">Código mais simples</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Progressive enhancement:<br>quando?</h2>
+						<ul>
+							<li class="fragment">Sites</li>
+							<li class="fragment">Apps internas</li>
+							<li class="fragment">Web apps</li>
+							<li class="fragment">Progressive web apps</li>
+						</ul>
+						<small class="fragment">(era mais fácil ter falado quando não usar)</small>
+					</section>
+				</section>
+				<section>
+					<h1 class="frase-sozinha">Contras</h1>
+				</section>
+				<section>
+					<h1>Obrigado!</h1>
+					<p>Luiz Corte Real</p>
+
+					<p>
+						<a href="https://twitter.com/srsaude">@srsaude</a>
+					</p>
+
+					<p>
+						<a href="https://github.com/luiz/la-musique">Projeto de exemplo</a>
+					</p>
+
+					<p>
+						Palestra sobre o tema em 2014:
+						<a href="https://youtu.be/H2sHmB28O_M?list=PLg2lQYZDBwORupm0JaQghhsI9mgWOZ1XL">vídeo</a> /
+						<a href="https://docs.google.com/presentation/d/1qu6XfB_Ee1rb9u-W8uyXAHdW1ymAawdD4ndnjdzXAM4/pub?start=false&loop=false&delayms=3000">slides</a>
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
