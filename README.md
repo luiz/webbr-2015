@@ -1,5 +1,5 @@
-[English version here](https://luiz.github.io/index-en.html)
-[Versão em português aqui](https://luiz.github.io/index.html)
+[English version here](https://luiz.github.io/webbr-2015/index-en.html)
+[Versão em português aqui](https://luiz.github.io/webbr-2015/index.html)
 
 Presentation about progressive enhancement made at the web.br conference 2015. Made with [http://lab.hakim.se/reveal-js/](reveal.js).
 
